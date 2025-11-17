@@ -425,6 +425,7 @@ local function set_highlights()
 		["@lsp.type.namespace"] = { link = "@namespace" },
 		["@lsp.type.namespace.python"] = { link = "@variable" },
 		["@lsp.type.parameter"] = { link = "@parameter" },
+		["@lsp.type.parameter.python"] = { link = "@variable.builtin" },  -- self, cls in ty
 		["@lsp.type.property"] = { link = "@property" },
 		["@lsp.type.variable"] = {}, -- defer to treesitter for regular variables
 		["@lsp.type.variable.svelte"] = { link = "@variable" },
