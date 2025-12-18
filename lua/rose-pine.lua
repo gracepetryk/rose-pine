@@ -939,7 +939,7 @@ local function set_highlights()
 		RenderMarkdownBullet = { fg = palette.rose },
 		RenderMarkdownChecked = { fg = palette.foam },
 		RenderMarkdownCode = { bg = palette.overlay },
-		RenderMarkdownCodeInline = { fg = palette.text, bg = palette.overlay },
+		RenderMarkdownCodeInline = { fg = palette.text, bg = palette.highlight_med },
 		RenderMarkdownDash = { fg = palette.muted },
 		RenderMarkdownH1Bg = { bg = groups.h1, blend = 20 },
 		RenderMarkdownH2Bg = { bg = groups.h2, blend = 20 },
