@@ -47,19 +47,19 @@ config.options = {
 		error = "love",
 		hint = "iris",
 		info = "foam",
-		ok = "leaf",
+		ok = "moss",
 		warn = "gold",
 		note = "pine",
 		todo = "rose",
 
-		git_add = "foam",
+		git_add = "moss",
 		git_change = "rose",
 		git_delete = "love",
 		git_dirty = "rose",
 		git_ignore = "muted",
 		git_merge = "iris",
 		git_rename = "pine",
-		git_stage = "iris",
+		git_stage = "moss",
 		git_text = "rose",
 		git_untracked = "subtle",
 
@@ -69,7 +69,7 @@ config.options = {
 		h3 = "rose",
 		h4 = "gold",
 		h5 = "pine",
-		h6 = "leaf",
+		h6 = "moss",
 
 		---@deprecated Replaced by `options.highlight_groups["Normal"]`
 		-- background = "base",
