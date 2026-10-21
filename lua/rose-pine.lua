@@ -190,7 +190,7 @@ local function set_highlights()
 		DiagnosticVirtualTextWarn = { fg = groups.warn, bg = groups.warn, blend = 10 },
 		DiagnosticWarn = { fg = groups.warn },
 
-		Boolean = { fg = palette.rose },
+		Boolean = { fg = palette.gold },
 		Character = { fg = palette.gold },
 		Comment = { fg = palette.subtle, italic = styles.italic },
 		Conditional = { fg = palette.pine },
@@ -201,7 +201,7 @@ local function set_highlights()
 		Error = { fg = palette.love },
 		Exception = { fg = palette.pine },
 		Float = { fg = palette.gold },
-		Function = { fg = palette.rose },
+		Function = { fg = palette.iris },
 		Identifier = { fg = palette.text },
 		Include = { fg = palette.pine },
 		Keyword = { fg = palette.pine },
@@ -297,7 +297,7 @@ local function set_highlights()
 
 		["@string"] = { link = "String" },
 		-- ["@string.documentation"] = {},
-		["@string.regexp"] = { fg = palette.iris },
+		["@string.regexp"] = { fg = palette.rose },
 		["@string.escape"] = { fg = palette.pine },
 		["@string.special"] = { link = "String" },
 		["@string.special.symbol"] = { link = "Identifier" },
@@ -317,8 +317,8 @@ local function set_highlights()
 		["@type.builtin"] = { fg = palette.moss, bold = styles.bold },
 		-- ["@type.definition"] = {},
 
-		["@attribute"] = { fg = palette.iris },
-		["@attribute.builtin"] = { fg = palette.iris, bold = styles.bold },
+		["@attribute"] = { fg = palette.rose },
+		["@attribute.builtin"] = { fg = palette.rose, bold = styles.bold },
 		["@property"] = { fg = palette.foam },
 
 		["@function"] = { fg = palette.iris, nocombine = true },
@@ -340,7 +340,7 @@ local function set_highlights()
 		["@keyword.operator"] = { fg = palette.subtle },
 		["@keyword.repeat"] = { fg = palette.pine },
 		["@keyword.return"] = { fg = palette.love },
-		["@keyword.storage"] = { fg = palette.foam },
+		["@keyword.storage"] = { fg = palette.pine },
 		["@keyword.throw"] = { fg = palette.love },
 
 		["@keyword.conditional"] = { fg = palette.pine },
@@ -386,6 +386,7 @@ local function set_highlights()
 		-- ["@markup.raw"] = { bg = palette.surface },
 		-- ["@markup.raw.block"] = { bg = palette.surface },
 		["@markup.raw.delimiter.markdown"] = { fg = palette.subtle },
+		["@markup.raw.markdown_inline"] = { fg = palette.gold },
 
 		["@markup.list"] = { fg = palette.pine },
 		["@markup.list.checked"] = { fg = palette.foam, bg = palette.foam, blend = 10 },
@@ -414,6 +415,8 @@ local function set_highlights()
 		["@tag.javascript"] = { fg = palette.moss }, -- JSX components
 		["@tag.tsx"] = { fg = palette.moss },
 		["@tag.attribute"] = { fg = palette.iris },
+		["@tag.attribute.javascript"] = { fg = palette.rose }, -- JSX props
+		["@tag.attribute.tsx"] = { fg = palette.rose },
 		["@tag.delimiter"] = { fg = palette.subtle },
 
 		--- Non-highlighting captures
@@ -428,23 +431,18 @@ local function set_highlights()
 		["@lsp.type.parameter"] = { link = "@parameter" },
 		["@lsp.mod.declaration"] = {},
 		["@lsp.type.comment"] = { link = "@comment" },
-		["@lsp.type.comment.c"] = { link = "@comment" },
-		["@lsp.type.comment.cpp"] = { link = "@comment" },
 		["@lsp.type.enum"] = { link = "@type" },
 		["@lsp.type.formatSpecifier"] = { link = "@punctuation" },
 		["@lsp.type.class"] = { link = "@type" },
 		["@lsp.type.interface"] = { link = "@type" },
 		["@lsp.type.keyword"] = { link = "@keyword" },
-		["@lsp.type.keyword.rust"] = {},
-		["@lsp.type.method.lua"] = { link = "@function.method", italic = true },
+		["@lsp.type.keyword.rust"] = {}, -- rust-analyzer tags return/if/etc. as keywords, hiding @keyword.return
+		["@lsp.type.macro"] = { link = "@function.macro" },
 		["@lsp.type.modifier"] = {link = "@keyword"},
-		["@lsp.type.namespace"] = { link = "@namespace" },
-		["@lsp.type.namespace.python"] = { link = "@variable" },
+		["@lsp.type.namespace"] = { link = "@module" },
 		["@lsp.type.property"] = { link = "@property" },
 		["@lsp.type.typeParameter.python"] = { link = "@variable.builtin" },  -- self, cls in ty
-		["@lsp.type.variable"] = { link = "@variable" },
-		["@lsp.type.variable.python"] = {},
-		["@lsp.type.variable.svelte"] = { link = "@variable" },
+		["@lsp.type.variable"] = {}, -- defer to treesitter, which distinguishes constants
 		["@lsp.typemod.function.declaration"] = { underline = true },
 		["@lsp.typemod.function.defaultLibrary"] = { link = "@function.builtin" },
 		["@lsp.typemod.interface.declaration"] = { underline = true },
@@ -1077,7 +1075,6 @@ local function set_highlights()
 		TabLineSel = { fg = palette.text, bg = "NONE", bold = styles.bold },
 
 		-- ["@markup.raw"] = { bg = "none" },
-		["@markup.raw.markdown_inline"] = { fg = palette.gold },
 		-- ["@markup.raw.block"] = { bg = "none" },
 
 		TelescopeNormal = { fg = palette.subtle, bg = "NONE" },
