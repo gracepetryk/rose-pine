@@ -314,19 +314,18 @@ local function set_highlights()
 		["@float"] = { link = "Number" },
 
 		["@type"] = { fg = palette.moss },
-		["@type.builtin"] = { fg = palette.foam, bold = styles.bold },
-		["@type.builtin.python"] = { fg = palette.moss },
+		["@type.builtin"] = { fg = palette.moss, bold = styles.bold },
 		-- ["@type.definition"] = {},
 
 		["@attribute"] = { fg = palette.iris },
 		["@attribute.builtin"] = { fg = palette.iris, bold = styles.bold },
-		["@property"] = { fg = palette.foam, italic = styles.italic },
+		["@property"] = { fg = palette.foam },
 
 		["@function"] = { fg = palette.iris, nocombine = true },
 		["@function.builtin"] = { fg = palette.iris, bold = true, nocombine = true },
 		["@function.call"] = { fg = palette.iris, italic = false, nocombine = true },
 		["@function.macro"] = { link = "Function" },
-		["@function.method"] = { fg = palette.rose },
+		["@function.method"] = { link = "@function" },
 		["@function.method.call"] = { link = "@function.call" },
 
 		["@parameter"] = { fg = palette.rose, italic = true },
@@ -411,6 +410,9 @@ local function set_highlights()
 		["@diff.delta"] = { bg = groups.git_change, blend = 20 },
 
 		["@tag"] = { link = "Tag" },
+		["@tag.builtin"] = { link = "Tag" },
+		["@tag.javascript"] = { fg = palette.moss }, -- JSX components
+		["@tag.tsx"] = { fg = palette.moss },
 		["@tag.attribute"] = { fg = palette.iris },
 		["@tag.delimiter"] = { fg = palette.subtle },
 
@@ -424,13 +426,14 @@ local function set_highlights()
 
 		--- Semantic
 		["@lsp.type.parameter"] = { link = "@parameter" },
-		["@lsp.mod.declaration"] = { underline = true },
+		["@lsp.mod.declaration"] = {},
 		["@lsp.type.comment"] = { link = "@comment" },
 		["@lsp.type.comment.c"] = { link = "@comment" },
 		["@lsp.type.comment.cpp"] = { link = "@comment" },
 		["@lsp.type.enum"] = { link = "@type" },
 		["@lsp.type.formatSpecifier"] = { link = "@punctuation" },
-		["@lsp.type.interface"] = { link = "@interface" },
+		["@lsp.type.class"] = { link = "@type" },
+		["@lsp.type.interface"] = { link = "@type" },
 		["@lsp.type.keyword"] = { link = "@keyword" },
 		["@lsp.type.keyword.rust"] = {},
 		["@lsp.type.method.lua"] = { link = "@function.method", italic = true },
@@ -442,9 +445,12 @@ local function set_highlights()
 		["@lsp.type.variable"] = { link = "@variable" },
 		["@lsp.type.variable.python"] = {},
 		["@lsp.type.variable.svelte"] = { link = "@variable" },
+		["@lsp.typemod.function.declaration"] = { underline = true },
 		["@lsp.typemod.function.defaultLibrary"] = { link = "@function.builtin" },
+		["@lsp.typemod.interface.declaration"] = { underline = true },
 		["@lsp.typemod.operator.injected"] = { link = "@operator" },
 		["@lsp.typemod.string.injected"] = { link = "@string" },
+		["@lsp.typemod.type.declaration"] = { underline = true },
 		["@lsp.typemod.variable.constant"] = { link = "@constant" },
 		["@lsp.typemod.variable.defaultLibrary"] = { link = "@variable.builtin" },
 		["@lsp.typemod.variable.definition"] = { italic = true },
